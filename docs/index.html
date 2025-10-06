@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scherzo 😈</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Courier New', monospace;
+      font-size: 2rem;
+      text-align: center;
+    }
+    #timer {
+      font-size: 4rem;
+      margin-top: 20px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div>💣 Tra <span id="timer">3</span> secondi esploderà il PC! 💣</div>
+
+  <script>
+    let seconds = 3;
+    const timerEl = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      seconds--;
+      if (seconds > 0) {
+        timerEl.textContent = seconds;
+      } else {
+        clearInterval(countdown);
+        document.body.innerHTML = "<h1 style='color:red;'>💥 BOOM! 💥</h1><p style='color:white;'>Scherzoooo 😆</p>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
